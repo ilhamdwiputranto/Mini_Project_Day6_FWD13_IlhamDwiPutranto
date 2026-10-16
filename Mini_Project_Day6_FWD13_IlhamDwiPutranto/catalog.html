@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DibiTech - Digital Product Catalog</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                800: "#1e293b",
+                900: "#0f172a",
+              },
+              brand: {
+                500: "#6366f1",
+                600: "#4f46e5",
+                700: "#4338ca",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom Reusable Tailwind Classes -->
+    <style type="text/tailwindcss">
+      @layer components {
+        /* Reusable Container */
+        .custom-container {
+          @apply max-w-[1000px] mx-auto px-5;
+        }
+
+        /* Reusable Primary Button  */
+        .btn-primary {
+          @apply inline-block bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold text-sm px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 text-center;
+        }
+
+        /* Reusable Card Design */
+        .card-custom {
+          @apply bg-white border border-slate-200 rounded-xl p-3 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-slate-300 hover:cursor-pointer;
+        }
+
+        /* Reusable Nav Link */
+        .nav-link {
+          @apply text-slate-400 hover:text-white font-medium transition-colors text-sm;
+        }
+
+        /* Reusable Social Icon */
+        .social-btn {
+          @apply w-8 h-8 rounded-full border border-slate-700 bg-slate-800 flex items-center justify-center text-xs text-slate-400 hover:bg-indigo-500 hover:border-indigo-500 hover:text-white transition-all;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-navy-900 border-b border-navy-800 sticky top-0 z-50">
+      <div class="custom-container">
+        <div class="flex items-center justify-between h-[70px]">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-2.5 font-bold text-lg text-white">
+            <img src="images/logo.png" alt="DibiTech Logo" class="h-8 w-auto object-contain" />
+            <span class="tracking-tight">DibiTech</span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-7">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="#" class="text-white font-medium text-sm">Catalog</a>
+            <a href="#" class="nav-link">Categories</a>
+            <a href="cart.html" class="nav-link">Cart (0)</a>
+            <a href="#" class="btn-primary">Login</a>
+          </nav>
+
+          <!-- Mobile Menu Toggle Button -->
+          <button id="menuBtn" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Toggle Menu">☰</button>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-navy-800 py-4 space-y-3 bg-navy-900">
+          <a href="index.html" class="block nav-link px-2">Home</a>
+          <a href="#" class="block text-white font-semibold text-sm px-2">Catalog</a>
+          <a href="#" class="block nav-link px-2">Categories</a>
+          <a href="cart.html" class="block nav-link px-2">Cart (0)</a>
+          <a href="#" class="btn-primary w-full mt-2">Login</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="custom-container py-8 w-full flex-grow">
+      <!-- HERO BANNER -->
+      <section
+        class="relative rounded-2xl overflow-hidden bg-navy-900 border border-navy-800 p-8 md:p-12 mb-10 text-center flex flex-col items-center justify-center shadow-xl min-h-[300px]">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-900/80 to-navy-900/95 z-0"></div>
+
+        <div class="relative z-10 max-w-2xl">
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white mb-3 tracking-tight">Explore Premium AI Tools & Products</h1>
+          <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+            Temukan koleksi alat kecerdasan buatan terbaik untuk meningkatkan efisiensi kerja, analisis data, pembuatan konten, dan pengembangan
+            perangkat lunak.
+          </p>
+        </div>
+      </section>
+
+      <!-- FEATURED PRODUCT -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-4 text-slate-900">Unggulan</h2>
+        <div class="bg-navy-900 border border-navy-800 rounded-2xl p-5 md:p-6 flex flex-col md:flex-row gap-6 shadow-md">
+          <img src="images/ai-writing.jpg" alt="Featured AI Tool" class="w-full md:w-[45%] h-52 md:h-60 object-cover rounded-xl" />
+          <div class="w-full md:w-[55%] flex flex-col justify-center items-start">
+            <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-2">Featured Tool</span>
+            <h3 class="text-xl font-bold text-white mb-2">AI Writing Assistant Pro</h3>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+              Buat artikel, email, dan konten pemasaran secara otomatis dalam hitungan detik dengan integrasi AI Generatif terbaru.
+            </p>
+            <a href="detail-product.html" class="btn-primary">Lihat Detail</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATALOG PRODUCT GRID -->
+      <section class="mb-12">
+        <h2 class="text-xl font-bold mb-5 text-slate-900">Katalog Produk</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+          <!-- Card 1 -->
+          <article class="card-custom">
+            <div>
+              <img src="images/ai-writing.jpg" alt="AI Writing" class="w-full aspect-square object-cover rounded-lg mb-3" />
+              <h3 class="font-semibold text-sm text-slate-900 mb-1 px-1">AI Writing Assistant</h3>
+              <p class="text-slate-500 text-xs px-1 mb-3 line-clamp-2">Buat artikel, email, dan konten pemasaran secara otomatis.</p>
+            </div>
+            <div class="flex items-center justify-between pt-2 px-1 border-t border-slate-100 mt-2">
+              <span class="font-bold text-sm text-slate-900">Rp 299.000</span>
+              <a href="detail-product.html" class="btn-primary text-xs !px-3 !py-1">Detail</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card-custom">
+            <div>
+              <img src="images/ai-image.jpg" alt="AI Image" class="w-full aspect-square object-cover rounded-lg mb-3" />
+              <h3 class="font-semibold text-sm text-slate-900 mb-1 px-1">AI Image Generator</h3>
+              <p class="text-slate-500 text-xs px-1 mb-3 line-clamp-2">Hasilkan ilustrasi dan gambar visual fotorealistik berkualitas tinggi.</p>
+            </div>
+            <div class="flex items-center justify-between pt-2 px-1 border-t border-slate-100 mt-2">
+              <span class="font-bold text-sm text-slate-900">Rp 450.000</span>
+              <a href="#" class="btn-primary text-xs !px-3 !py-1">Detail</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card-custom">
+            <div>
+              <img src="images/code.jpg" alt="AI Code" class="w-full aspect-square object-cover rounded-lg mb-3" />
+              <h3 class="font-semibold text-sm text-slate-900 mb-1 px-1">AI Code Copilot</h3>
+              <p class="text-slate-500 text-xs px-1 mb-3 line-clamp-2">Asisten cerdas pembuat kode, debugging, dan otomatisasi refactoring.</p>
+            </div>
+            <div class="flex items-center justify-between pt-2 px-1 border-t border-slate-100 mt-2">
+              <span class="font-bold text-sm text-slate-900">Rp 520.000</span>
+              <a href="#" class="btn-primary text-xs !px-3 !py-1">Detail</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card-custom">
+            <div>
+              <img src="images/ai-data.jpg" alt="AI Data Analytics" class="w-full aspect-square object-cover rounded-lg mb-3" />
+              <h3 class="font-semibold text-sm text-slate-900 mb-1 px-1">AI Analytics Insight</h3>
+              <p class="text-slate-500 text-xs px-1 mb-3 line-clamp-2">Otomatisasi analisis data bisnis dan dapatkan prediksi tren penjualan.</p>
+            </div>
+            <div class="flex items-center justify-between pt-2 px-1 border-t border-slate-100 mt-2">
+              <span class="font-bold text-sm text-slate-900">Rp 380.000</span>
+              <a href="#" class="btn-primary text-xs !px-3 !py-1">Detail</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 border-t border-navy-800 py-10 text-center text-slate-400 text-xs">
+      <div class="custom-container">
+        <!-- Navigation Links -->
+        <ul class="flex justify-center gap-8 mb-6 list-none flex-wrap">
+          <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center gap-3 mb-5">
+          <a href="#" class="social-btn"><img src="https://cdn.simpleicons.org/x/94a3b8" alt="x" /></a>
+          <a href="#" class="social-btn"><img src="https://cdn.simpleicons.org/instagram/94a3b8" alt="instagram" /></a>
+          <a href="#" class="social-btn"><img src="https://cdn.simpleicons.org/facebook/94a3b8" alt="facebook" /></a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-slate-500 text-[0.78rem]">&copy; 2026 DibiTech. All rights reserved.</p>
+      </div>
+
+      <!-- ================= START FLOATING BUTTON KEMBALI KE PORTAL ================= -->
+      <a
+        href="../../landing_page_README_portal_projek.html"
+        title="Kembali ke Portal Utama"
+        style="
+          position: fixed;
+          bottom: 24px;
+          right: 24px;
+          z-index: 99999;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(135deg, #2563eb, #1d4ed8);
+          color: #ffffff;
+          text-decoration: none;
+          font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 12px 20px;
+          border-radius: 50px;
+          box-shadow:
+            0 10px 25px -5px rgba(37, 99, 235, 0.5),
+            0 8px 10px -6px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          cursor: pointer;
+        "
+        onmouseover="
+          this.style.transform = 'translateY(-4px) scale(1.03)';
+          this.style.boxShadow = '0 20px 30px -10px rgba(37, 99, 235, 0.6)';
+        "
+        onmouseout="
+          this.style.transform = 'translateY(0) scale(1)';
+          this.style.boxShadow = '0 10px 25px -5px rgba(37, 99, 235, 0.5)';
+        ">
+        <!-- Icon Arrow Left / Home -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" />
+        </svg>
+        <span>Kembali ke Portal</span>
+      </a>
+      <!-- ================= END FLOATING BUTTON KEMBALI KE PORTAL ================= -->
+    </footer>
+
+    <!-- JavaScript Mobile Navigation Toggle -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
