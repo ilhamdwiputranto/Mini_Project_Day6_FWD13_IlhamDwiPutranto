@@ -254,6 +254,44 @@
         <p class="text-slate-500 text-[0.78rem]">&copy; 2026 DibiTech. All rights reserved.</p>
       </div>
 
+      <!-- ================= START FLOATING BUTTON KETERANGAN ================= -->
+      <a
+        href="#"
+        title="Ini CSS Tailwind"
+        style="
+          position: fixed;
+          bottom: 84px;
+          right: 24px;
+          z-index: 99999;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(135deg, #2563eb, #1d4ed8);
+          color: #ffffff;
+          text-decoration: none;
+          font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 12px 20px;
+          border-radius: 50px;
+          box-shadow:
+            0 10px 25px -5px rgba(37, 99, 235, 0.5),
+            0 8px 10px -6px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          cursor: pointer;
+        "
+        onmouseover="
+          this.style.transform = 'translateY(-4px) scale(1.03)';
+          this.style.boxShadow = '0 20px 30px -10px rgba(37, 99, 235, 0.6)';
+        "
+        onmouseout="
+          this.style.transform = 'translateY(0) scale(1)';
+          this.style.boxShadow = '0 10px 25px -5px rgba(37, 99, 235, 0.5)';
+        ">
+        <span>Ini CSS Tailwind</span>
+      </a>
+
       <!-- ================= START FLOATING BUTTON KEMBALI KE PORTAL ================= -->
       <a
         href="../../landing_page_README_portal_projek.html"
