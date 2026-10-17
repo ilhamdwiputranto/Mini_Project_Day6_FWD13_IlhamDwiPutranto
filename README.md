@@ -19,12 +19,12 @@ Mini project ini dibuat sebagai pemahaman struktur HTML5 semantik, CSS3 modern d
 
 ## 📸 Tampilan Antarmuka
 
-| Halaman                       | Deskripsi                                                                                              |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------- |
-| **Home (HTML & CSS)**         | Berisi Landing Page utama yang dibuat menggunakan HTML5 Murni & CSS3 dengan BEM Naming (`index.html`). |
-| **Katalog Produk (Tailwind)** | Berisi daftar produk digital AI yang dibuat menggunakan Tailwind CSS (`catalog.html`).                 |
-| **Detail Produk (Tailwind)**  | Berisi informasi rinci fitur dan tombol pembelian produk (`detail-produk.html`).                       |
-| **Keranjang & Checkout**      | Berisi alur transaksi dan ringkasan pembayaran (`cart.html` & `checkout.html`).                        |
+| Halaman                              | Deskripsi                                                                                                               |
+| :----------------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| **Home (HTML & CSS)**                | Berisi Landing Page utama yang dibuat menggunakan HTML5 Murni & CSS3 dengan BEM Naming (`index.html`).                  |
+| **Login, Katalog Produk (Tailwind)** | Berisi halaman login dan daftar produk digital AI yang dibuat menggunakan Tailwind CSS (`Login.html` & `catalog.html`). |
+| **Detail Produk (Tailwind)**         | Berisi informasi rinci fitur dan tombol pembelian produk (`detail-produk.html`).                                        |
+| **Keranjang & Checkout**             | Berisi alur transaksi dan ringkasan pembayaran (`cart.html` & `checkout.html`).                                         |
 
 ---
 
@@ -33,13 +33,13 @@ Mini project ini dibuat sebagai pemahaman struktur HTML5 semantik, CSS3 modern d
 - **HTML5**: Menggunakan elemen semantik (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) untuk struktur web yang rapi dan _accessible_.
 - **CSS3 Modern**:
   - Konsep Layouting: **Flexbox** dan **CSS Grid**.
-  - Naming Convention: **BEM (Block Element Modifier)** pada file `style.css`.
+  - Naming Convention: **BEM (Block Element Modifier: "block\_\_element--modifier")** pada file `style.css`.
   - Efek interaktif: Transition, transform, dan state `:hover` / `:focus`.
 - **Tailwind CSS**:
-  - Penggunaan Utility Classes untuk fleksibilitas styling.
+  - Penggunaan Utility Classes.
   - Penerapan `@layer components` dan `@apply` untuk membuat kelas kustom yang dapat digunakan kembali (_reusable design_).
 - **JavaScript (Vanilla)**:
-  - Manipulasi DOM sederhana untuk toggle _mobile navigation menu_.
+  - Eksplorasi untuk manipulasi untuk toggle _mobile navigation menu_.
 
 ---
 
@@ -49,22 +49,23 @@ Mini project ini dibuat sebagai pemahaman struktur HTML5 semantik, CSS3 modern d
 .
 ├── index.html           # Assignment 1: Landing Page Murni (HTML + CSS)
 ├── style.css            # Custom CSS dengan BEM Metodologi
+├── login.html         # Assignment 2: Login (Tailwind CSS)
 ├── catalog.html         # Assignment 2: Katalog Produk (Tailwind CSS)
-├── detail-product.html  # Explorasi: Halaman Detail Produk Digital
-├── cart.html            # Explorasi: Halaman Keranjang Belanja
-├── checkout.html        # Explorasi: Halaman Form Checkout & Pembayaran
-├── images/              # Folder untuk aset gambar, ikon, dan screenshot
+├── detail-product.html  # Assignment 2: Halaman Detail Produk Digital (Tailwind CSS)
+├── cart.html            # Assignment 2: Halaman Keranjang Belanja (Tailwind CSS)
+├── checkout.html        # Assignment 2: Halaman Form Checkout & Pembayaran (Tailwind CSS)
+├── images/              # Folder untuk aset gambar, dan ikon
 └── README.md            # Dokumentasi Project
 ```
 
 ---
 
-## 🎯 Fitur & Keunggulan Desain
+## 🎯 Fitur & Desain
 
-1. **Fully Responsive Layout**: Tampilan teroptimasi dengan baik di perangkat Mobile, Tablet, dan Desktop.
+1. **Fully Responsive Layout**: Tampilan teroptimasi di perangkat Mobile, Tablet, dan Desktop.
 2. **Reusable Design System**: Konsistensi komponen tombol, kartu produk, dan navigasi di seluruh halaman web.
 3. **Aksesibilitas Dasar**:
-   - Struktur _Heading_ hierarkis dan teratur ($H1 \rightarrow H2 \rightarrow H3$).
+   - Struktur hierarkis dan teratur.
    - Kontras warna yang seimbang untuk kenyamanan dibaca.
    - Atribut `alt` pada setiap gambar untuk pembaca layar (_screen reader_).
 
